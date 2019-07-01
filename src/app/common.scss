@@ -1,0 +1,156 @@
+$colors: (
+    primary:    #488aff,
+    secondary:  #32db64,
+    danger:     #f53d3d,
+    light:      #f4f4f4,
+    dark:       #222
+);
+
+.cardclass {
+    --min-height: 60px;
+    --background: var(--ion-item-background,var(--ion-background-color,#fff));
+    --background-activated: #171717fa;
+    --background-focused: var(--ion-item-background-activated,#f1f1f1);
+    --transition: background-color 300ms cubic-bezier(.4,0,.2,1);
+    --padding-start: 0px;
+    --color: var(--ion-item-color,var(--ion-text-color,#000));
+    --border-color: var(--ion-item-border-color,var(--ion-border-color,var(--ion-color-step-150,rgba(0,0,0,0.13))));
+    --inner-padding-end: 16px;
+    --inner-border-width: 0 0 1px 0;
+    --highlight-height: 2px;
+    --highlight-color-focused: var(--ion-color-primary,#3880ff);
+    --highlight-color-valid: var(--ion-color-success,#10dc60);
+    --highlight-color-invalid: var(--ion-color-danger,#f04141);
+    font-size: 13px !important;
+    font-weight: 400;
+    text-transform: none;
+    max-width: 100%;
+}
+
+.cardtxt {
+    padding-left: 0.5em;
+    max-height: 4em;
+    max-width: 6em;
+    float: left;
+    display: block;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.cardcurname {
+    margin-left: 0em;
+    max-height: 4em;
+    max-width: 7em;
+    float: left;
+    display: block;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-align: left;
+    padding-right: 1em;
+}
+
+.cardtxtprice {
+    padding-left: 1em;
+    max-height: 3em;
+    max-width: 9em;
+    float: left;
+    display: block;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.cardhourly {
+    margin-left: 0em;
+    max-height: 3em;
+    max-width: 7em;  
+    display: block;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-align: right;
+    position:absolute;  
+    right:0;
+}
+
+.cardhourlypos {
+    margin-left: 0em;
+    max-height: 3em;
+    max-width: 7em;
+    float: right;
+    display: block;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-align: right;
+    padding-right: 1em;
+}
+
+ion-avatar {
+    width: 30px !important;
+    height: 30px !important;
+    max-width: 30px !important;  //any size
+    max-height: 30px !important;
+    float: right; //any size
+}
+
+.sc-ion-card-md-h {
+    --background: #1EB980;
+    --color: #e8e8e8;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 0px;
+    font-size: 20px;
+    -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.47), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.negative {
+    --background: #E34C3C;
+    --background: -webkit-linear-gradient(to right, #E34C3C, #BD3F32);
+    --background: linear-gradient(to right, #9c6560, #BD3F32);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #E34C3C;
+}
+
+.positive {
+    --background: #35BD59; // fallback for old browsers
+    --background: -webkit-linear-gradient(to right, #35BD59, #299446); // Chrome 10-25, Safari 5.1-6
+    --background: linear-gradient(to right, #35BD59, #299446); // W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #35BD59;
+}
+
+/* Popovers */
+.popoverList {
+    padding: 0px;
+}
+
+.popoverAvatar {
+    margin-left: 8px;
+}
+
+.popoverHeader {
+    padding: 0px;
+    max-height: 4em;
+}
+
+.popoverTitle {
+    position: absolute;
+    left: 2.5em;
+    font-size: 18px;
+}
+
+.popoverSelectionLabel {
+    font-size: 16px;
+    padding-left: 0.5em
+}

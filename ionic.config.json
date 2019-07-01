@@ -1,0 +1,7 @@
+{
+  "name": "cryptowatch",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

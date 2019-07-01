@@ -1,0 +1,41 @@
+<ion-app>
+    <ion-menu contentId="content" swipe-gesture="true" slot="top">
+        <ion-header>
+            <ion-toolbar color="primary">
+                <ion-title>Menu</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-list>
+                <ion-menu-toggle auto-hide="false" >
+                    <ion-item *ngFor="let p of appPages" [routerLink]="p.url">
+                        <ion-icon [name]="p.icon"></ion-icon>
+                        <ion-label>
+                            {{ p.title }}
+                        </ion-label>
+                    </ion-item>
+                    <div style="text-align: center;">
+                        <br>
+                        <br>
+                        <a href="https://freebitco.in/?r=647549"><img style="max-width: 100%;" src="https://static1.freebitco.in/banners/468x60-3.png"></a>
+                        <br>
+                        <br>
+                        <br>
+                        Copyright (c) 2019 by Bitcoin-tech.com
+                        <br>
+                        <a href="https://www.bitcoin-tech.com"><img src="https://www.bitcoin-tech.com/images/bitcoin-log.png"></a>
+                     </div>
+                </ion-menu-toggle>
+            </ion-list>
+        </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="content" main></ion-router-outlet>
+    <ion-tabs>
+        <ion-tab-bar slot="bottom">
+            <ion-tab-button *ngFor="let p of appPages" tab="{{p.id}}">
+                <ion-icon name="{{p.icon}}"></ion-icon>
+                <ion-label>{{p.title}}</ion-label>
+            </ion-tab-button>
+        </ion-tab-bar>
+    </ion-tabs>
+</ion-app>

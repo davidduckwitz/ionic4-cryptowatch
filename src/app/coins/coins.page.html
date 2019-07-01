@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        <ion-searchbar (ionChange)="doFilter($event)"placeholder="Crypto Center"></ion-searchbar>
+      </ion-buttons>
+      <ion-title>Coins</ion-title>
+    </ion-toolbar>
+    
+  </ion-header>
+<ion-content id="content" color="dark">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh data" refreshingSpinner="circles"
+      refreshingText="Refreshing data...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-card color="dark">
+    <ion-card-header color="success" (click)="showMarketsharePopover()">
+      <ion-label>Market share %</ion-label>
+      <ion-label class="marketshare-header-helptext">(Click to show)</ion-label>
+    </ion-card-header>
+  </ion-card>
+  <div *ngFor="let coin of visibleCoins">
+    <!-- Repeat this element for each coin -->
+    <ion-card (click)=showPopover(coin)>
+      <ion-item color="dark" class="cardclass">
+        <div class="cardtxt">
+          <ion-button color="medium" size="small" clear item-end icon-start>
+            {{coin.rank}}
+          </ion-button>
+        </div>
+        <div class="cardtxt">
+          <ion-avatar item-start>
+            <img src="/assets/img/{{coin.symbol}}@2X.PNG" alt="{{coin.id}}" style="border-radius:0;" *ngIf="coin.symbol !=='Denarium-Custom-Gold-Plated-2018-front'">
+            <img src="/assets/img/{{coin.symbol}}.jpg" alt="{{coin.id}}" style="border-radius:0;" *ngIf="coin.symbol ==='Denarium-Custom-Gold-Plated-2018-front'">
+          </ion-avatar>
+        </div>
+        <div class="cardtxt">
+          <p class="cardcurname">{{coin.name}}</p>
+          <p class="cardcurname">{{coin.symbol}}</p>
+        </div>
+        <div class="cardtxtprice">
+          <span ion-text item-start>{{coin.price_usd | currency:'USD':'symbol-narrow':'1.2-3'}}</span>
+        </div>
+        <div class="cardhourly">
+          <p class="cardhourlypos" ion-text item-start color="subtle"
+            [ngClass]="(coin.percent_change_1h > 0) ? 'positive' : 'negative'">({{coin.percent_change_1h}}% 1h)</p>
+          <p class="cardhourlypos" ion-text item-start color="subtle"
+            [ngClass]="(coin.percent_change_24h > 0) ? 'positive' : 'negative'">({{coin.percent_change_24h}}% 24h)</p>
+        </div>
+      </ion-item>
+    </ion-card>
+  </div>
+</ion-content>
